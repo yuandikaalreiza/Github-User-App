@@ -1,5 +1,6 @@
 package com.dicoding.githubuserapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,5 +40,17 @@ class MainActivity : AppCompatActivity() {
         rvUsers.layoutManager = LinearLayoutManager(this)
         val listGithubUserAdapter = ListGithubUserAdapter(list)
         rvUsers.adapter = listGithubUserAdapter
+
+        listGithubUserAdapter.setOnItemClickCallback(object: ListGithubUserAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: GithubUser) {
+                showSelectedUser(data)
+            }
+        })
+    }
+
+    private fun showSelectedUser(user: GithubUser){
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRA_USERNAME, user.userName)
+        startActivity(intent)
     }
 }
