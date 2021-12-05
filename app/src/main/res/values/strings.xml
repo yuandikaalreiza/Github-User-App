@@ -4,6 +4,13 @@
     <string name="user_name">Nama user</string>
     <string name="user_username">/@username</string>
     <string name="user_location">Lokasi</string>
+    <string name="random_num">9999</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repositories">Repositories</string>
+    <string name="company">company</string>
+    <string name="location">location</string>
+    <string name="avatar">Avatar</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
