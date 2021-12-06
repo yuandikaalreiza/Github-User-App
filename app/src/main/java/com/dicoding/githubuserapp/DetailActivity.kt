@@ -23,7 +23,6 @@ class DetailActivity : AppCompatActivity() {
             .load(user.photo)
             .circleCrop()
             .into(binding.imgDetailPhoto)
-        binding.imgDetailPhoto.setImageResource(user.photo)
         binding.tvDetailName.text = user.name
         binding.tvDetailUsername.text = user.userName
         binding.tvFollowersNum.text = user.follower
