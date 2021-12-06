@@ -31,7 +31,6 @@ class ListGithubUserAdapter(private val listGithubUser: ArrayList<GithubUser>): 
         holder.binding.tvItemUsername.text = username
         holder.binding.tvItemLocation.text = location
         holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Kamu memilih " + listGithubUser[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
             onItemClickCallback.onItemClicked(listGithubUser[holder.adapterPosition])
         }
     }
