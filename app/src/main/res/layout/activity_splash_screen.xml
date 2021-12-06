@@ -14,7 +14,8 @@
         app:layout_constraintBottom_toTopOf="@id/tv_splash_screen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/github_mark" />
+        android:src="@drawable/github_mark"
+        android:contentDescription="@string/github_logo"/>
 
     <TextView
         android:id="@+id/tv_splash_screen"

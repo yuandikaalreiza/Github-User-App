@@ -5,10 +5,10 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class GithubUser(
-    var name: String,
-    var userName: String,
-    var location: String,
-    var photo: Int,
+    val name: String,
+    val userName: String,
+    val location: String,
+    val photo: Int,
     val follower: String,
     val following: String,
     val repository: String,
