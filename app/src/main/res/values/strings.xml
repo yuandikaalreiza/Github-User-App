@@ -11,6 +11,7 @@
     <string name="company">company</string>
     <string name="location">location</string>
     <string name="avatar">Avatar</string>
+    <string name="github_user_app">Github User App</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
