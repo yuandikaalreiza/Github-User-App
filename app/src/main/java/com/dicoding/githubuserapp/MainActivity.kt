@@ -27,10 +27,23 @@ class MainActivity : AppCompatActivity() {
             val dataUsername = resources.getStringArray(R.array.username)
             val dataLocation = resources.getStringArray(R.array.location)
             val dataPhoto = resources.obtainTypedArray(R.array.avatar)
+            val dataFollower = resources.getStringArray(R.array.followers)
+            val dataFollowing = resources.getStringArray(R.array.following)
+            val dataRepository = resources.getStringArray(R.array.repository)
+            val dataCompany = resources.getStringArray(R.array.company)
 
             val listGithubUser = ArrayList<GithubUser>()
             for (i in dataName.indices) {
-                val githubUser = GithubUser(dataName[i], dataUsername[i], dataLocation[i], dataPhoto.getResourceId(i, -1))
+                val githubUser = GithubUser(
+                    dataName[i],
+                    dataUsername[i],
+                    dataLocation[i],
+                    dataPhoto.getResourceId(i, -1),
+                    dataFollower[i],
+                    dataFollowing[i],
+                    dataRepository[i],
+                    dataCompany[i]
+                )
                 listGithubUser.add(githubUser)
             }
             return listGithubUser
@@ -50,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSelectedUser(user: GithubUser){
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra(DetailActivity.EXTRA_USERNAME, user.userName)
+        intent.putExtra(DetailActivity.EXTRA_USERNAME, user)
         startActivity(intent)
     }
 }

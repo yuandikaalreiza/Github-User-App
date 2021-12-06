@@ -8,5 +8,9 @@ data class GithubUser(
     var name: String,
     var userName: String,
     var location: String,
-    var photo: Int
+    var photo: Int,
+    val follower: String,
+    val following: String,
+    val repository: String,
+    val company: String,
 ): Parcelable
