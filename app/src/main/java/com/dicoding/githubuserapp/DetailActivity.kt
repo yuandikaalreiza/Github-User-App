@@ -2,6 +2,7 @@ package com.dicoding.githubuserapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.dicoding.githubuserapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -18,6 +19,10 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = intent.getParcelableExtra<GithubUser>(EXTRA_USERNAME) as GithubUser
+        Glide.with(this)
+            .load(user.photo)
+            .circleCrop()
+            .into(binding.imgDetailPhoto)
         binding.imgDetailPhoto.setImageResource(user.photo)
         binding.tvDetailName.text = user.name
         binding.tvDetailUsername.text = user.userName

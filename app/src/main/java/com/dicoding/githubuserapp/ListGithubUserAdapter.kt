@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.dicoding.githubuserapp.databinding.ItemRowUserBinding
 
 class ListGithubUserAdapter(private val listGithubUser: ArrayList<GithubUser>): RecyclerView.Adapter<ListGithubUserAdapter.ListViewHolder>() {
@@ -24,7 +25,10 @@ class ListGithubUserAdapter(private val listGithubUser: ArrayList<GithubUser>): 
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, username, location, photo) = listGithubUser[position]
-        holder.binding.imgItemPhoto.setImageResource(photo)
+        Glide.with(holder.itemView.context)
+            .load(photo)
+            .circleCrop()
+            .into(holder.binding.imgItemPhoto)
         holder.binding.tvItemName.text = name
         holder.binding.tvItemUsername.text = username
         holder.binding.tvItemLocation.text = location
